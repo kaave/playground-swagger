@@ -1,0 +1,28 @@
+{
+  "private": true,
+  "scripts": {
+    "fix": "prettier --write '**/*.yml'",
+    "lint-staged": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.yml": [
+      "prettier --write",
+      "git add"
+    ],
+    "package.json": [
+      "sort-package-json",
+      "git add"
+    ]
+  },
+  "devDependencies": {
+    "husky": "^3.0.5",
+    "lint-staged": "^9.2.5",
+    "prettier": "^1.18.2",
+    "sort-package-json": "^1.22.1"
+  }
+}
