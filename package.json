@@ -1,5 +1,6 @@
 {
   "private": true,
+  "main": "./dist/typescript-axios/index.ts",
   "scripts": {
     "fix": "prettier --write '**/*.yml'",
     "lint-staged": "lint-staged"

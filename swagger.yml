@@ -29,4 +29,25 @@ paths:
                   gender: male
                   height: 181
                   weight: 68
-
+components:
+  schemas:
+    Me:
+      type: object
+      required: # 必須フィールド
+        - id
+      properties:
+        name:
+          type: string
+          example: kaave
+        birthday:
+          type: date
+          example: 1970-01-01
+        gender:
+          type: string
+          example: female
+        height:
+          type: number
+          example: 173
+        weight:
+          type: number
+          example: 60
