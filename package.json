@@ -1,4 +1,5 @@
 {
+  "name": "playground-swagger",
   "private": true,
   "main": "./dist/typescript-axios/index.ts",
   "scripts": {
