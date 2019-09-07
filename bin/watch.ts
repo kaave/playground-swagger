@@ -21,7 +21,7 @@ const updateSwaggerYml = async (filepath?: string) => {
 
 async function main() {
   Logger.log('run initial build...');
-  await updateSwaggerYml();
+  await make();
 
   Logger.log('start watching...');
   watcher

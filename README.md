@@ -2,5 +2,10 @@
 
 ## How to use
 
-- `make`: start development workspace.
-- `make build`: run ts code generater.
+```bash
+# start development
+yarn start
+
+# generate
+yarn build
+```

@@ -3,14 +3,18 @@
   "private": true,
   "main": "./dist/typescript-axios/index.ts",
   "scripts": {
-    "build": "",
+    "build": "run-s build:yaml build:ts",
+    "build:ts": "./bin/generate.bash",
+    "build:yaml": "ts-node bin/build",
     "fix": "run-p fix:*",
     "fix:script": "eslint --fix '**/*.{js,ts,tsx}'",
     "fix:yaml": "prettier --write '**/*.yml'",
     "lint": "run-p lint:*",
     "lint-staged": "lint-staged",
     "lint:script": "eslint '**/*.{js,ts,tsx}'",
-    "watch": "ts-node bin/watch"
+    "start": "run-p start:*",
+    "start:docker": "docker-compose up",
+    "start:yaml": "ts-node bin/watch"
   },
   "husky": {
     "hooks": {
