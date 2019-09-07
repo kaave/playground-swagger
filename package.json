@@ -3,8 +3,14 @@
   "private": true,
   "main": "./dist/typescript-axios/index.ts",
   "scripts": {
-    "fix": "prettier --write '**/*.yml'",
-    "lint-staged": "lint-staged"
+    "build": "",
+    "fix": "run-p fix:*",
+    "fix:script": "eslint --fix '**/*.{js,ts,tsx}'",
+    "fix:yaml": "prettier --write '**/*.yml'",
+    "lint": "run-p lint:*",
+    "lint-staged": "lint-staged",
+    "lint:script": "eslint '**/*.{js,ts,tsx}'",
+    "watch": "ts-node bin/watch"
   },
   "husky": {
     "hooks": {
@@ -16,15 +22,39 @@
       "prettier --write",
       "git add"
     ],
+    "*.{js,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ],
     "package.json": [
       "sort-package-json",
       "git add"
     ]
   },
+  "dependencies": {
+    "chokidar": "^3.0.2",
+    "fs-extra": "^8.1.0",
+    "js-yaml": "^3.13.1",
+    "json-refs": "^3.0.13"
+  },
   "devDependencies": {
+    "@types/fs-extra": "^8.0.0",
+    "@types/js-yaml": "^3.12.1",
+    "@typescript-eslint/eslint-plugin": "^2.1.0",
+    "@typescript-eslint/parser": "^2.1.0",
+    "eslint": "^6.3.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.2.0",
+    "eslint-import-resolver-typescript": "^1.1.1",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-prettier": "^3.1.0",
+    "eslint-plugin-unicorn": "^10.0.0",
     "husky": "^3.0.5",
     "lint-staged": "^9.2.5",
+    "npm-run-all": "^4.1.5",
     "prettier": "^1.18.2",
-    "sort-package-json": "^1.22.1"
+    "sort-package-json": "^1.22.1",
+    "ts-node": "^8.3.0",
+    "typescript": "^3.6.2"
   }
 }

@@ -1,0 +1,11 @@
+title: My first swagger
+description: It's my first swagger.
+# termsOfService: http://example.com/terms/
+contact:
+  name: kaave
+  url: http://kaave.github.com
+  email: junkjunctions+swagger@gmail.com
+license:
+  name: Apache 2.0
+  url: http://www.apache.org/licenses/LICENSE-2.0.html
+version: 0.0.1

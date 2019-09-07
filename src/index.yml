@@ -1,0 +1,27 @@
+openapi: 3.0.2
+info:
+  $ref: ./src/info/index.yml
+paths:
+  $ref: ./src/paths/index.yml
+components:
+  schemas:
+    Me:
+      type: object
+      required: # 必須フィールド
+        - id
+      properties:
+        name:
+          type: string
+          example: kaave
+        birthday:
+          type: date
+          example: 1971-01-01
+        gender:
+          type: string
+          example: female
+        height:
+          type: number
+          example: 173
+        weight:
+          type: number
+          example: 60

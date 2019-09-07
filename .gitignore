@@ -167,3 +167,5 @@ $RECYCLE.BIN/
 
 ### Manual ###
 /dist
+/.vscode
+/src/swagger.yml

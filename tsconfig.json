@@ -1,0 +1,28 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "target": "esnext",
+        "module": "commonjs",
+        "lib": ["dom", "es2015", "es2016"],
+        "allowJs": true,
+        "jsx": "preserve",
+        "sourceMap": true,
+        "removeComments": false,
+        "skipLibCheck": true,
+        "strict": true,
+        "moduleResolution": "node",
+        "baseUrl": ".",
+        "paths": {
+            "~/*": ["./src/*"],
+            "@/*": ["./*"]
+        },
+        "typeRoots": ["./node_modules/@types"],
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "preserveConstEnums": true,
+        "forceConsistentCasingInFileNames": true,
+        "resolveJsonModule": true,
+        "isolatedModules": true
+    },
+    "include": ["**/*.ts", "**/*.tsx"]
+}
