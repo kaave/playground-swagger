@@ -2,6 +2,7 @@ import chokidar from 'chokidar';
 import path from 'path';
 
 import { make } from './resolve';
+import * as Logger from './logger';
 
 const watcher = chokidar.watch('.', {
   persistent: true, // 監視を続けている間プロセスを終了しない
@@ -12,17 +13,17 @@ const watcher = chokidar.watch('.', {
 
 const updateSwaggerYml = async (filepath?: string) => {
   if (filepath) {
-    console.log(`${filepath} changed. Update swagger.yml and copy it to viewer.`);
+    Logger.log(`${filepath} changed. Update swagger.yml and copy it to viewer.`);
   }
 
   await make();
 };
 
 async function main() {
-  console.log('run initial build...');
+  Logger.log('run initial build...');
   await updateSwaggerYml();
 
-  console.log('start watching...');
+  Logger.log('start watching...');
   watcher
     .on('add', updateSwaggerYml)
     .on('addDir', updateSwaggerYml)
@@ -33,4 +34,4 @@ async function main() {
 
 main()
   .then(() => ({}))
-  .catch(error => console.error(error));
+  .catch(error => Logger.error(error));
