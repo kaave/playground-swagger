@@ -13,7 +13,9 @@
     "lint-staged": "lint-staged",
     "lint:script": "eslint '**/*.{js,ts,tsx}'",
     "start": "run-p start:*",
-    "start:docker": "docker-compose up",
+    "start:ui": "run-p start:ui:*",
+    "start:ui:base": "docker-compose up",
+    "start:ui:browser": "ts-node bin/browserSync",
     "start:yaml": "ts-node bin/watch"
   },
   "husky": {
@@ -36,14 +38,18 @@
     ]
   },
   "dependencies": {
+    "browser-sync": "^2.26.7",
     "chalk": "^2.4.2",
     "chokidar": "^3.0.2",
     "date-fns": "^2.1.0",
+    "dotenv": "^8.1.0",
     "fs-extra": "^8.1.0",
     "js-yaml": "^3.13.1",
     "json-refs": "^3.0.13"
   },
   "devDependencies": {
+    "@types/browser-sync": "^2.26.1",
+    "@types/dotenv": "^6.1.1",
     "@types/fs-extra": "^8.0.0",
     "@types/js-yaml": "^3.12.1",
     "@typescript-eslint/eslint-plugin": "^2.1.0",
